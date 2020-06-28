@@ -10,21 +10,21 @@ pygame.init()
 screen = pygame.display.set_mode((1024, 698))
 
 # bg
-background = pygame.image.load('Background02.jpg')
+background = pygame.image.load('Background image.jpg')
 
 # bg sound
-mixer.music.load('asus-27-06-2020-16-41-35.wav')
+mixer.music.load('Background.wav')
 mixer.music.play(-1)
 
 # Title and Icon
 pygame.display.set_caption('Zombie Shooter')
-icon = pygame.image.load('horror.png')
+icon = pygame.image.load('Icon.png')
 pygame.display.set_icon(icon)
 
 # ready- can't see bullet
 # fire = can see the bullet
 # bullet
-bullet = pygame.image.load('bullet (1).png')
+bullet = pygame.image.load('Bullet.png')
 bulletx = 660
 bullety = 0
 bullet_x_change = 10
@@ -39,7 +39,7 @@ def firebullet(x, y):
 
 
 # player
-playerImg = pygame.image.load('output-onlinepngtools.png')
+playerImg = pygame.image.load('Shooter.png')
 playerx = 660
 playery = 372
 playery_change = 0
@@ -53,13 +53,13 @@ def player(x, y):
 enemyImg = []
 
 #multiple enemies
-enemyImg.append(pygame.image.load('output-onlinepngtools (2).png'))
-enemyImg.append(pygame.image.load('output-onlinepngtools (3).png'))
-enemyImg.append(pygame.image.load('output-onlinepngtools (4).png'))
-enemyImg.append(pygame.image.load('output-onlinepngtools (5).png'))
-enemyImg.append(pygame.image.load('output-onlinepngtools (6).png'))
-enemyImg.append(pygame.image.load('output-onlinepngtools (5).png'))
-#enemyImg.append(pygame.image.load('output-onlinepngtools (3).png'))
+enemyImg.append(pygame.image.load('enemy1.png'))
+enemyImg.append(pygame.image.load('enemy2.png'))
+enemyImg.append(pygame.image.load('enemy3.png'))
+enemyImg.append(pygame.image.load('enemy4.png'))
+enemyImg.append(pygame.image.load('enemy5.png'))
+enemyImg.append(pygame.image.load('enemy2.png'))
+#enemyImg.append(pygame.image.load('enemy(n).png'))
 
 
 enemy_x = []
@@ -71,7 +71,7 @@ number_of_enemies = 6
 # Assigning same features to multiple enemies
 
 for i in range(number_of_enemies):
-    # enemyImg.append(pygame.image.load('output-onlinepngtools (3).png'))
+    # enemyImg.append(pygame.image.load('enemy(n).png'))
     enemy_x.append(random.randint(0, 100))
     enemy_y.append(random.randint(310, 600))
     # speed of enemy (y-axis)
@@ -141,7 +141,7 @@ while running:
             # Gun control
             if event.key == pygame.K_SPACE:
                 if bullet_state == 'ready':
-                    bullet_sound = mixer.Sound('M1 Garand Single-SoundBible.com-1941178963.wav')
+                    bullet_sound = mixer.Sound('Bullet.wav')
                     bullet_sound.set_volume(0.3)
                     bullet_sound.play()
                     bullety = playery
@@ -196,7 +196,7 @@ while running:
             score += 1
             enemy_x[i] = random.randint(-40, 10)
             enemy_y[i] = random.randint(310, 350)
-            hit_sound = mixer.Sound('aahhh.wav')
+            hit_sound = mixer.Sound('collision.wav')
             hit_sound.set_volume(0.8)
             hit_sound.play()
 
