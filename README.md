@@ -1,5 +1,2 @@
-Python version - 3.8.3
+A simple game created using Python's pygame library.
 
-IDE used - Pycharm 
-
-3rd party Library - pygame 
